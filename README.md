@@ -34,9 +34,18 @@
 
 ---
 
-### Pseucode
+### **_Pseucode_**
 
-[Can be found here](./pseudocode.txt)
+##### [Can be found here](./pseudocode.txt)
+
+---
+
+### **_Future Targets_**
+
+##### [ ] Add ability for player to split hands
+##### [ ] Add an insurance feature
+
+---
 
 ### **_Credits_**
 
