@@ -1,0 +1,53 @@
+add the button to open the main gameplay page
+
+set player starting chips to 100
+set players bet to 0
+
+generate deck of cards
+    52 cards - 2 through 10, jack, queen, king, ace of each suit
+    assign values to each card based on numerical value, face cards get 10, ace 1 or 11
+    set up as an array that is generated out of multiple other arrays in order to avoid writing out 52 item length array
+
+
+function to shuffle cards - will be used as part of the deal function
+
+payout function
+    chips + 1.5* bet if blackjack
+    chips + bet if won
+    chips - bet if loss
+    chips stay the same if push
+
+button to change players bet to the inputted amount (not higher than amount of chips the player has, amount >= 1)
+    change status message of current bet
+    if insufficient chips return status message "insufficient funds"
+buton to reset players chips to 100
+
+deal function - 2 cards to both player and dealer
+    generate visual cards in the appropriate spaces based on what cards dealt
+
+check winner function
+    check for blackjacks or busts
+        if both player and dealer hit blackjack result is a push
+    compare player and dealer hands
+    output result, run payout function and deliver appropriate status message
+
+
+function for players turn
+    ask them to hit or stand
+    deal card if hit
+    if stand move on to dealers turn
+    if bust or blackjack stop and run dealers turn function
+
+function for dealers turn
+    if player hit blackjack run check winner function immediately
+    if player bust run check winner function immediately
+    if hand < 17 - hit
+    if bust or blackjack run check winner function immediately
+
+
+
+
+
+
+
+
