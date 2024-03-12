@@ -52,5 +52,6 @@
 ##### Markdown Guide: [ia.net](https://ia.net/writer/support/general/markdown-guide)
 ##### Rules of Blackjack [Wikipedia](https://en.wikipedia.org/wiki/Blackjack)
 ##### Constructing a Deck of Cards [dev.to](https://dev.to/michaelburrows/create-a-random-playing-card-generator-with-javascript-1k7k)
+##### Function for randomizing Deck [Stack overflow](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
 
 ---
