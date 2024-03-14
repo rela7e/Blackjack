@@ -1,6 +1,14 @@
+const player = {
+    cards: [],
+    handValue: 0,
+}
+const dealer = {
+    cards: [],
+    handValue: 0,
+}
+
 var chipCount = 100
-var playerCards = []
-var dealerCards = []
+var betAmount = 0
 
 const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 const suits = ["Hearts", "Spades", "Diamonds", "Clubs"]
@@ -26,6 +34,14 @@ function shuffleDeck(arr){
     }
 }
 
+function startGame() {
+    player.cards.splice(0 , player.cards.length);
+    dealer.cards.splice(0 , dealer.cards.length);
+    buildDeck();
+    shuffleDeck(deck);
+    
+    
+}
 
 
 
