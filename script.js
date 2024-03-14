@@ -34,16 +34,28 @@ function shuffleDeck(arr){
     }
 }
 
+function dealPlayer(){
+    var dealt = (deck.pop());
+    player.cards.push(dealt)
+
+}
+
+function dealDealer(){
+    var dealt = (deck.pop());
+    dealer.cards.push(dealt);
+}
+
 function startGame() {
     player.cards.splice(0 , player.cards.length);
     dealer.cards.splice(0 , dealer.cards.length);
     buildDeck();
     shuffleDeck(deck);
-    
+    dealPlayer();
+    dealPlayer();
+    dealDealer();
+    dealDealer();
     
 }
-
-
 
 
 
