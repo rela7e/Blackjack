@@ -21,7 +21,7 @@
 
 ### **_Getting Started_**
 
-##### Navigate to the page and click the button to start the game. Adjust bet sizing and deal the cards. Try not to go above 21!
+##### Navigate to the page and click the button to start the game. Press button to deal. Try not to go above 21!
 
 
 ---
