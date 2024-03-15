@@ -172,3 +172,14 @@ function stand() {
 
     disableButtons();
 }
+
+function disableButtons() {
+    document.getElementById('hit-button').disabled = true;
+    document.getElementById('stand-button').disabled = true;
+}
+
+document.getElementById('deal-button').addEventListener('click', deal);
+document.getElementById('hit-button').addEventListener('click', hit);
+document.getElementById('stand-button').addEventListener('click', stand);
+
+deal();
