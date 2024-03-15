@@ -15,7 +15,7 @@
 
 ### **_Link to game_**
 
-#### Game currently under construction, check back here for link
+#### [Surge](https://pdarcy-blackjack.surge.sh/)
 
 ---
 
