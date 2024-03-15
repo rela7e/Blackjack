@@ -108,3 +108,35 @@ function updateHands() {
     document.getElementById('dealer-score').textContent = `Score: ${calculateScore(dealerHand)}`;
 }
 
+function deal() {
+    document.getElementById('hit-button').disabled = false;
+    document.getElementById('stand-button').disabled = false;
+
+    const currentBet = parseInt(document.getElementById('current-bet').textContent);
+
+    if (deck.length === 0) {
+        deck = buildDeck();
+        shuffleDeck(deck);
+    }
+
+    playerHand = [deck.pop(), deck.pop()];
+    dealerHand = [deck.pop(), deck.pop()];
+
+    updateHands();
+
+    const playerScore = calculateScore(playerHand);
+    const dealerScore = calculateScore(dealerHand);
+
+    if (playerScore === 21 && dealerScore === 21 && playerHand.length === 2 && dealerHand.length === 2) {
+        document.getElementById('result').textContent = 'Both player and dealer have blackjack. It\'s a tie!';
+        disableButtons();
+    } else if (playerScore === 21 && playerHand.length === 2) {
+        document.getElementById('result').textContent = 'Blackjack! You win!';
+        updateChips("win"); 
+        disableButtons();
+    } else if (dealerScore === 21 && dealerHand.length === 2) {
+        document.getElementById('result').textContent = 'Dealer has blackjack. You lose!';
+        disableButtons();
+    }
+}
+
