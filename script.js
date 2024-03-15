@@ -89,3 +89,22 @@ function getSuitSymbol(suit) {
     }
 }
 
+function updateHands() {
+    const playerCards = document.getElementById('player-cards');
+    const dealerCards = document.getElementById('dealer-cards');
+    playerCards.innerHTML = '';
+    dealerCards.innerHTML = '';
+
+    for (let card of playerHand) {
+        const cardElement = createCardRepresentation(card);
+        playerCards.appendChild(cardElement);
+    }
+    document.getElementById('player-score').textContent = `Score: ${calculateScore(playerHand)}`;
+
+    for (let card of dealerHand) {
+        const cardElement = createCardRepresentation(card);
+        dealerCards.appendChild(cardElement);
+    }
+    document.getElementById('dealer-score').textContent = `Score: ${calculateScore(dealerHand)}`;
+}
+
