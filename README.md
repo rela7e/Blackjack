@@ -44,6 +44,7 @@
 ##### [ ] Add ability for player to split hands
 ##### [ ] Add an insurance feature
 ##### [ ] Add a betting feature
+##### [ ] Add a double down feature
 
 ---
 
