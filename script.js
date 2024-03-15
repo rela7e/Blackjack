@@ -4,10 +4,12 @@ let deck = [];
 let playerHand = [];
 let dealerHand = [];
 
+// function to calculate hand score
 function calculateScore(hand) {
     let score = 0;
     let numAces = 0;
 
+    // loop through each card in the hand 
     for (let i = 0; i < hand.length; i++) {
         const card = hand[i].value;
         if (card === "J" || card === "Q" || card === "K") {
@@ -19,7 +21,7 @@ function calculateScore(hand) {
             score += parseInt(card);
         }
     }
-
+    // adjust scores where aces present to avoid busting, changing value of ace from 11 to 1
     while (score > 21 && numAces > 0) {
         score -= 10;
         numAces--;
@@ -32,6 +34,7 @@ function calculateScore(hand) {
     return score;
 }
 
+// combines the suit and value arrays in order to construct a 52 card deck
 function buildDeck() {
     for (let s = 0; s < suits.length; s++) {
         for (let v = 0; v < values.length; v++) {
@@ -43,6 +46,7 @@ function buildDeck() {
     return deck;
 }
 
+// randomizes the deck
 function shuffleDeck(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -53,6 +57,7 @@ function shuffleDeck(arr) {
     return arr;
 }
 
+// function to create HTML versions of cards dealt
 function createCardRepresentation(card) {
     const cardElement = document.createElement('div');
     cardElement.classList.add('card');
@@ -72,6 +77,7 @@ function createCardRepresentation(card) {
     return cardElement;
 }
 
+// function to change text of card suit into a symbol for aesthetic purposes
 function getSuitSymbol(suit) {
     switch (suit) {
         case "Hearts":
@@ -87,6 +93,7 @@ function getSuitSymbol(suit) {
     }
 }
 
+// function to update the visual models of hands to properly render the cards
 function updateHands() {
     const playerCards = document.getElementById('player-cards');
     const dealerCards = document.getElementById('dealer-cards');
@@ -106,6 +113,7 @@ function updateHands() {
     document.getElementById('dealer-score').textContent = `Score: ${calculateScore(dealerHand)}`;
 }
 
+// function to initially deal the hands
 function deal() {
     document.getElementById('hit-button').disabled = false;
     document.getElementById('stand-button').disabled = false;
@@ -120,6 +128,7 @@ function deal() {
 
     updateHands();
 
+    //way to check for initial blackjack so the hand ends if appropriate
     const playerScore = calculateScore(playerHand);
     const dealerScore = calculateScore(dealerHand);
 
@@ -136,6 +145,7 @@ function deal() {
     }
 }
 
+// function to handle the player drawing additional cards
 function hit() {
     playerHand.push(deck.pop());
 
@@ -148,6 +158,7 @@ function hit() {
     }
 }
 
+// function to handle player standing - then runs through the dealers turn and checks the results
 function stand() {
     while (calculateScore(dealerHand) < 17) {
         dealerHand.push(deck.pop());
@@ -169,11 +180,13 @@ function stand() {
     disableButtons();
 }
 
+// function to disable hit and stand buttons after hand is over
 function disableButtons() {
     document.getElementById('hit-button').disabled = true;
     document.getElementById('stand-button').disabled = true;
 }
 
+// event listeners for the game buttons
 document.getElementById('deal-button').addEventListener('click', deal);
 document.getElementById('hit-button').addEventListener('click', hit);
 document.getElementById('stand-button').addEventListener('click', stand);
