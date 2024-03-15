@@ -140,3 +140,35 @@ function deal() {
     }
 }
 
+function hit() {
+    playerHand.push(deck.pop());
+
+    updateHands();
+
+    const playerScore = calculateScore(playerHand);
+    if (playerScore === "Bust") {
+        document.getElementById('result').textContent = 'Bust! You lose.';
+        disableButtons();
+    }
+}
+
+function stand() {
+    while (calculateScore(dealerHand) < 17) {
+        dealerHand.push(deck.pop());
+    }
+
+    updateHands();
+
+    const playerScore = calculateScore(playerHand);
+    const dealerScore = calculateScore(dealerHand);
+
+    if (playerScore === "Bust" || (dealerScore <= 21 && dealerScore > playerScore)) {
+        document.getElementById('result').textContent = 'Dealer wins!';
+    } else if (dealerScore === "Bust" || playerScore > dealerScore) {
+        document.getElementById('result').textContent = 'You win!';
+    } else {
+        document.getElementById('result').textContent = 'It\'s a tie!';
+    }
+
+    disableButtons();
+}
