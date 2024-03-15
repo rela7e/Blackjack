@@ -20,13 +20,11 @@ function calculateScore(hand) {
         }
     }
 
-    // Adjust score for multiple Aces
     while (score > 21 && numAces > 0) {
         score -= 10;
         numAces--;
     }
 
-    // Return "Bust" if score exceeds 21
     if (score > 21) {
         return "Bust";
     }
@@ -111,8 +109,6 @@ function updateHands() {
 function deal() {
     document.getElementById('hit-button').disabled = false;
     document.getElementById('stand-button').disabled = false;
-
-    const currentBet = parseInt(document.getElementById('current-bet').textContent);
 
     if (deck.length === 0) {
         deck = buildDeck();
