@@ -13,6 +13,21 @@ var betAmount = 0
 const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 const suits = ["Hearts", "Spades", "Diamonds", "Clubs"]
 const deck = []
+const cardValues = {
+    "2" : 2,
+    "3" : 3,
+    "4" : 4,
+    "5" : 5,
+    "6" : 6,
+    "7" : 7,
+    "8" : 8,
+    "9" : 9,
+    "10" : 10,
+    "J" : 10,
+    "Q" : 10,
+    "K" : 10,
+    "A" : 11,
+}
 
 function buildDeck(){
     for (let s = 0; s < suits.length; s++){
@@ -43,6 +58,10 @@ function dealPlayer(){
 function dealDealer(){
     var dealt = (deck.pop());
     dealer.cards.push(dealt);
+}
+
+function checkScore(){
+
 }
 
 function startGame() {
