@@ -28,9 +28,7 @@
 
 ### **_Wireframes_**
 
-##### [Initial game page](https://wireframe.cc/5hwXlR)
-
-##### [Main gameplay page](https://wireframe.cc/ST6iRz)
+##### [Main gameplay page](https://wireframe.cc/rUHA4m)
 
 ---
 
@@ -44,6 +42,7 @@
 
 ##### [ ] Add ability for player to split hands
 ##### [ ] Add an insurance feature
+##### [ ] Add a betting feature
 
 ---
 

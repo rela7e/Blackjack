@@ -1,5 +1,8 @@
 body {
     font-family: Arial, sans-serif;
+    border: 10px solid #000;
+    height: 100vh;
+    margin: 0;
 }
 
 #container {
@@ -49,3 +52,29 @@ body {
 .diamonds { color: red; }
 .clubs { color: black; }
 .spades { color: black; }
+
+#border-container {
+    background-color: #4E6A54; 
+    padding: 20px; 
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.card-value {
+    font-weight: bold; 
+}
+
+#player-score, #dealer-score {
+    font-weight: bold; 
+    font-size: 24px;
+}
+
+#result {
+    font-size: 24px; 
+}
+
+#deal-button, #hit-button, #stand-button {
+    margin: 10px; 
+    font-size: 24px;
+    font-weight: bold;
+}

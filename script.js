@@ -63,7 +63,7 @@ function createCardRepresentation(card) {
 
     const suitElement = document.createElement('div');
     suitElement.classList.add('card-suit');
-    suitElement.classList.add(card.suit.toLowerCase()); // Add class based on suit
+    suitElement.classList.add(card.suit.toLowerCase()); 
     suitElement.textContent = getSuitSymbol(card.suit);
 
     cardElement.appendChild(valueElement);
@@ -124,7 +124,7 @@ function deal() {
     const dealerScore = calculateScore(dealerHand);
 
     if (playerScore === 21 && dealerScore === 21 && playerHand.length === 2 && dealerHand.length === 2) {
-        document.getElementById('result').textContent = 'Both player and dealer have blackjack. It\'s a tie!';
+        document.getElementById('result').textContent = 'Both player and dealer have blackjack. Push!';
         disableButtons();
     } else if (playerScore === 21 && playerHand.length === 2) {
         document.getElementById('result').textContent = 'Blackjack! You win!';
@@ -163,7 +163,7 @@ function stand() {
     } else if (dealerScore === "Bust" || playerScore > dealerScore) {
         document.getElementById('result').textContent = 'You win!';
     } else {
-        document.getElementById('result').textContent = 'It\'s a tie!';
+        document.getElementById('result').textContent = 'Push!';
     }
 
     disableButtons();
@@ -178,4 +178,3 @@ document.getElementById('deal-button').addEventListener('click', deal);
 document.getElementById('hit-button').addEventListener('click', hit);
 document.getElementById('stand-button').addEventListener('click', stand);
 
-deal();
