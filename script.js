@@ -54,3 +54,22 @@ function shuffleDeck(arr) {
     }
     return arr;
 }
+
+function createCardRepresentation(card) {
+    const cardElement = document.createElement('div');
+    cardElement.classList.add('card');
+    
+    const valueElement = document.createElement('div');
+    valueElement.classList.add('card-value');
+    valueElement.textContent = card.value;
+
+    const suitElement = document.createElement('div');
+    suitElement.classList.add('card-suit');
+    suitElement.classList.add(card.suit.toLowerCase()); // Add class based on suit
+    suitElement.textContent = getSuitSymbol(card.suit);
+
+    cardElement.appendChild(valueElement);
+    cardElement.appendChild(suitElement);
+
+    return cardElement;
+}

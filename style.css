@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.hand {
+    margin-top: 20px;
+}
+
+.hand h2 {
+    margin-bottom: 10px;
+}
+
+.hand p {
+    margin-top: 10px;
+}
+
+#result {
+    font-weight: bold;
+    margin-top: 20px;
+    color: red;
+}
+
+
+.card {
+    width: 100px;
+    height: 150px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    margin-right: 10px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.cards{
+    display: flex;
+    justify-content: center;
+}
+
+.hearts { color: red; }
+.diamonds { color: red; }
+.clubs { color: black; }
+.spades { color: black; }
